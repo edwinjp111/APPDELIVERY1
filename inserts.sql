@@ -36,22 +36,26 @@ VALUES
 (2, 'Laura Martinez', '3102223344', 'DEF456', 'Disponible'),
 (3, 'Pedro Sanchez', '3103334455', 'GHI789', 'Ocupado');
 
+INSERT into categoria
+(id_categoría, nombre) 
+VALUES(1, 'comida rapida'),
+(2, 'comida a la carta');
 
 INSERT INTO Plato
-(id_plato, id_restaurante, nombre, descripcion, precio, disponibilidad)
+(id_plato, id_restaurante, nombre, descripcion, precio, disponibilidad, id_categoría)
 VALUES
-(1, 1, 'Hamburguesa', 'Hamburguesa con queso', 18000, 1),
-(2, 1, 'Perro caliente', 'Perro caliente tradicional', 12000, 1),
-(3, 1, 'Salchipapa', 'Salchipapa con salsas', 15000, 1),
-(4, 1, 'Papas fritas', 'Porcion de papas fritas', 8000, 1),
-(5, 2, 'Pollo asado', 'Pollo asado con papas', 25000, 1),
-(6, 2, 'Alitas BBQ', 'Alitas con salsa BBQ', 20000, 1),
-(7, 2, 'Pechuga a la plancha', 'Pechuga con ensalada', 22000, 1),
-(8, 2, 'Arroz con pollo', 'Arroz con pollo y verduras', 17000, 1),
-(9, 3, 'Pizza hawaiana', 'Pizza con jamon y pina', 30000, 1),
-(10, 3, 'Pizza de pepperoni', 'Pizza con pepperoni y queso', 32000, 1),
-(11, 3, 'Pizza vegetariana', 'Pizza con verduras', 28000, 1),
-(12, 3, 'Lasana', 'Lasana de carne y queso', 24000, 1);
+(1, 1, 'Hamburguesa', 'Hamburguesa con queso', 18000, 1, 1),
+(2, 1, 'Perro caliente', 'Perro caliente tradicional', 12000, 1, 1),
+(3, 1, 'Salchipapa', 'Salchipapa con salsas', 15000, 1, 1),
+(4, 1, 'Papas fritas', 'Porcion de papas fritas', 8000, 1, 1),
+(5, 2, 'Pollo asado', 'Pollo asado con papas', 25000, 1, 2),
+(6, 2, 'Alitas BBQ', 'Alitas con salsa BBQ', 20000, 1, 2),
+(7, 2, 'Pechuga a la plancha', 'Pechuga con ensalada', 22000, 1, 2),
+(8, 2, 'Arroz con pollo', 'Arroz con pollo y verduras', 17000, 1, 2),
+(9, 3, 'Pizza hawaiana', 'Pizza con jamon y pina', 30000, 1, 1),
+(10, 3, 'Pizza de pepperoni', 'Pizza con pepperoni y queso', 32000, 1, 1),
+(11, 3, 'Pizza vegetariana', 'Pizza con verduras', 28000, 1, 1),
+(12, 3, 'Lasana', 'Lasana de carne y queso', 24000, 1, 1);
 
 
 INSERT INTO Pedido

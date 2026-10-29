@@ -20,3 +20,16 @@
 -- SELECT * FROM Usuario;
 -- SELECT * FROM Repartidor;
 -- SELECT * FROM Restaurante;
+-- SELECT nombre, precio
+-- FROM Plato
+-- WHERE Categoria = 1;
+-- SELECT *
+-- From Pedido
+-- WHERE id_usuario = 4;
+
+-- CREATE INDEX  id_pedido_usuario
+-- ON PEDIDO (id_usuario);
+SELECT id_usuario, detalles_json
+From configuracion
+WHERE json_extract(detalles_json,'$.tema') =
+'oscuro';

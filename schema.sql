@@ -8,6 +8,8 @@ DROP TABLE IF EXISTS Plato;
 DROP TABLE IF EXISTS Repartidor;
 DROP TABLE IF EXISTS Restaurante;
 DROP TABLE IF EXISTS Usuario;
+DROP TABLE IF EXISTS Categoria;
+
 
 -- 1. TABLA USUARIO
 CREATE TABLE Usuario (
@@ -17,6 +19,13 @@ CREATE TABLE Usuario (
     telefono TEXT
     -- direccion TEXT,
     -- contrasena TEXT NOT NULL
+);
+
+-- Crear tabla categorías
+
+CREATE TABLE Categoria (
+id_categoría INTEGER PRIMARY KEY, 
+nombre TEXT NOT NULL
 );
 
 -- 2. TABLA RESTAURANTE
@@ -42,12 +51,18 @@ CREATE TABLE Repartidor (
 CREATE TABLE Plato (
     id_plato INTEGER PRIMARY KEY AUTOINCREMENT,
     id_restaurante INTEGER NOT NULL,
+
     nombre TEXT NOT NULL,
     descripcion TEXT,
     precio REAL NOT NULL CHECK (precio >= 0),
     disponibilidad INTEGER DEFAULT 1,
+    id_categoría INTEGER NOT NULL,
+    categoria TEXT,
+    FOREIGN KEY (id_categoría)
+        REFERENCES categoria(id_categoría) 
     FOREIGN KEY (id_restaurante)
         REFERENCES Restaurante(id_restaurante)
+    
 );
 
 -- 5. TABLA PEDIDO
